@@ -81,6 +81,41 @@ node succinct-claim.js
 - **✅ Frontrun Prevention**: Transactions invisible until execution
 - **✅ Multiple RPC Fallback**: Redundant network connectivity
 
+## ⛽ Gas Fee Configuration
+
+The tool uses default gas settings that work for normal network conditions:
+
+```javascript
+const gasSettings = {
+  maxFeePerGas: ethers.parseUnits("6", "gwei"),        // Maximum gas price
+  maxPriorityFeePerGas: ethers.parseUnits("2", "gwei"), // Priority tip
+};
+```
+
+### 🔧 Adjusting Gas Fees
+
+**When to increase gas fees:**
+- Network is congested (check [etherscan.io/gastracker](https://etherscan.io/gastracker))
+- Your bundle keeps failing to get included
+- Time-sensitive rescue operation
+
+**Recommended settings by network condition:**
+```javascript
+// Low congestion (cheap but slower)
+maxFeePerGas: ethers.parseUnits("3", "gwei")
+maxPriorityFeePerGas: ethers.parseUnits("1", "gwei")
+
+// Normal conditions (default)
+maxFeePerGas: ethers.parseUnits("6", "gwei")
+maxPriorityFeePerGas: ethers.parseUnits("2", "gwei")
+
+// High congestion (expensive but faster)
+maxFeePerGas: ethers.parseUnits("15", "gwei")
+maxPriorityFeePerGas: ethers.parseUnits("5", "gwei")
+```
+
+💡 **Pro Tip**: Check current gas prices before running. Higher priority fees increase your chances of bundle inclusion in the target block.
+
 ## ⚠️ Important Considerations
 
 - **Gas Requirements**: Sponsor wallet needs sufficient ETH
