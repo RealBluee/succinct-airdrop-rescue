@@ -35,6 +35,8 @@ This tool uses **Flashbots bundles** to execute both claiming and transfer trans
 - Sponsor wallet with ETH for gas fees
 
 ### Environment Variables
+Create a `.env` file in your project root:
+
 ```bash
 COMPROMISED_KEY=your_compromised_private_key
 SPONSOR_KEY=your_sponsor_private_key  
@@ -43,11 +45,34 @@ ALCHEMY_URL=https://eth-mainnet.g.alchemy.com/v2/YOUR-API-KEY
 INFURA_URL=https://mainnet.infura.io/v3/YOUR-PROJECT-ID
 ```
 
+### 🔑 Getting API Keys
+
+**Alchemy (Recommended):**
+1. Visit [alchemy.com](https://alchemy.com) and create free account
+2. Create new app → Select "Ethereum Mainnet"
+3. Copy your API key and replace `YOUR-API-KEY` in the URL above
+
+**Infura (Backup):**
+1. Visit [infura.io](https://infura.io) and create free account  
+2. Create new project → Select "Ethereum Mainnet"
+3. Copy your Project ID and replace `YOUR-PROJECT-ID` in the URL above
+
+💡 **Why both?** The tool uses RPC fallback - if one service is down, it automatically switches to the other for maximum reliability.
+
 ### Installation
 ```bash
+# Install required dependencies
 npm install ethers @flashbots/ethers-provider-bundle axios dotenv
+
+# Run the rescue tool
 node succinct-claim.js
 ```
+
+### Dependencies Explained
+- **ethers**: Ethereum blockchain interaction library
+- **@flashbots/ethers-provider-bundle**: Official Flashbots MEV protection provider
+- **axios**: HTTP client for API communication
+- **dotenv**: Environment variable management
 
 ## 🔒 Security Features
 
@@ -104,6 +129,6 @@ Your donations help maintain and improve this tool for the community. Every cont
 
 MIT License - Feel free to use, modify, and distribute.
 
-----
+---
 
 **Disclaimer**: This tool is for educational and legitimate wallet recovery purposes only. Users are responsible for compliance with applicable laws and regulations. Always verify you have legitimate ownership of wallets and tokens before use.
