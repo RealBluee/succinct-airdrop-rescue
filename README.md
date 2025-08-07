@@ -104,6 +104,6 @@ Your donations help maintain and improve this tool for the community. Every cont
 
 MIT License - Feel free to use, modify, and distribute.
 
----
+----
 
 **Disclaimer**: This tool is for educational and legitimate wallet recovery purposes only. Users are responsible for compliance with applicable laws and regulations. Always verify you have legitimate ownership of wallets and tokens before use.
