@@ -29,7 +29,12 @@ This tool uses **Flashbots bundles** to execute both claiming and transfer trans
 ## 🛠️ Setup
 
 ### Prerequisites
-- Node.js & npm
+**Node.js & npm:**
+- **Download**: Visit [nodejs.org](https://nodejs.org) and download the LTS version
+- **Verify installation**: Run `node --version` and `npm --version` in terminal
+- **Minimum versions**: Node.js 16+ and npm 8+ recommended
+
+**Other requirements:**
 - Alchemy/Infura RPC endpoints
 - Compromised wallet private key
 - Sponsor wallet with ETH for gas fees
@@ -67,6 +72,13 @@ npm install ethers @flashbots/ethers-provider-bundle axios dotenv
 # Run the rescue tool
 node succinct-claim.js
 ```
+
+### 🪟 Windows PowerShell Issues
+If you get `ExecutionPolicy` errors on Windows, run this first:
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process
+```
+Then proceed with the npm install command. This temporarily allows script execution for the current session only.
 
 ### Dependencies Explained
 - **ethers**: Ethereum blockchain interaction library
@@ -155,7 +167,7 @@ Your donations help maintain and improve this tool for the community. Every cont
 ## ⚡ Quick Start
 
 1. Clone this repository
-2. Install dependencies: `npm install ethers @flashbots/ethers-provider-bundle axios dotenv`
+2. Install dependencies: `npm install npm install ethers @flashbots/ethers-provider-bundle axios dotenv`
 3. Configure your `.env` file
 4. Run: `node succinct-claim.js`
 5. Watch your tokens get rescued safely! 🎉
