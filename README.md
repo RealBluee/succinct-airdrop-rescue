@@ -1,3 +1,5 @@
+[🇹🇷 Türkçe](README.tr.md) | [🇺🇸 English](README.md)
+
 # 🛡️ Succinct Airdrop Atomic Rescue Tool
 
 A secure solution to claim tokens from a compromised wallet using Flashbots MEV protection. This tool enables atomic claiming and transfer of Succinct Foundation airdrop tokens, preventing frontrunning attacks.
